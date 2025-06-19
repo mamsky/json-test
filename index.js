@@ -1,6 +1,14 @@
 const express = require("express");
 const app = express();
 const port = 3009;
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: true,
+    methods: ["GET"],
+  })
+);
 
 app.get("/user", (_req, res) => {
   res.json([
